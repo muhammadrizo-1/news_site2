@@ -1,0 +1,16 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %} Biz haqimizda {% endblock title %}
+
+{% block content %}
+    <h1>Kirish oynasi</h1>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+
+    <button type="submit">SignIn</button>
+    </form>
+
+    <a href="{% url 'user_register' %}"><button>SignUp</button></a>
+
+{% endblock %}
